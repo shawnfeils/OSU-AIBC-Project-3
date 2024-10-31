@@ -8,19 +8,21 @@ For our final project, we focused on developing a handwriting recognition applic
 - **Incorporating Letters**: Next, we transitioned to the EMNIST dataset, which includes both letters and digits. We initially attempted to train the model using the EMNIST letters dataset but encountered challenges in achieving the desired accuracy.
 - **Switching to EMNIST by Class**: We switched to the EMNIST by class dataset, which contains both letters and numbers. Despite our expectations, this approach proved more complex than anticipated.
 - **Troubleshooting**: We attempted to troubleshoot down many avenues without success:
-  * We performed hyperparameter tuning, increased the number of epochs, and applied data augmentation to improve model performance.
-  * We attempted to utilize the Keras Tuner for optimizing hyperparameters, but the process was time-consuming and we ultimately abandoned this approach after running the Tuner for over 25 hours without completion.
-- **Utilizing External Datasets**: Following feedback from Yuyang, we sourced a high-performing dataset from Kaggle. We imported this dataset as a CSV and adopted the original author’s image preprocessing steps while maintaining our prediction code from the digit model.
+  * Generate a Confusion Matrix
+  * Visualize Misclassified Images
+  * Adjust Model Complexity
+  * Experiment with Preprocessing
+  * Experiment with CNN Model Architecture and Hyperparameter Choices
+  - **Utilizing External Datasets**: Following feedback from Yuyang, we sourced a high-performing dataset from Kaggle. We imported this dataset as a CSV and adopted the original author’s image preprocessing steps while maintaining our prediction code from the digit model.
   * Despite achieving high accuracy with the new dataset, the model struggled with accurate predictions, such as distinguishing between serif and sans serif capital “E” which it returned as an "A" and "D" respectively with 100% certainty
 
 ## Future Considerations
-There are a few considerations that we can take into account to adjust this model to accurately predict handwritten letters in the future:
-* **Generate a Confusion Matrix** to pinpoint classes that the model confuses frequently.
-* **Visualize Misclassified Images** to understand patterns in incorrect predictions.
-* **Adjust Model Complexity** if needed (either add or reduce layers, or experiment with deeper architectures).
-* **Experiment with Preprocessing**: Augment data, rotate, center, etc., to make the model more robust to variations.
-* **Evaluation Metric**: Expand our evaluation metrics beyond accuracy to include F1-score, precision, and recall for a more comprehensive assessment of model performance.
-* **Model Architecture and Hyperparameter Choices**: Continue to experiment with various CNN architectures and hyperparameters to find a balance between complexity and performance.
+There are a few considerations that we can take into account to troubleshoot and adjust this model to accurately predict handwritten letters in the future:
+* Expand evaluation metrics beyond accuracy to include F1-score, precision, and recall for a more comprehensive assessment of model performance.
+* Review the labels and classes to ensure consistency
+Future development would include: 
+* Incorporating the team’s handwriting into the training data of a successful model
+* Incorporating an OCR app to convert long form handwriting into processable images
 
 ## Conclusion
 Our journey revealed that while we successfully trained a model for digit recognition, the transition to handwriting recognition was fraught with challenges. The highly trained model did not yield reliable predictions for handwritten letters, indicating many possibilities to troubleshoot in the future, such as:
